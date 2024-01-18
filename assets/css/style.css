@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -24,6 +24,10 @@ header {
 
 .description {
   white-space: pre-wrap;
+}
+
+.container {
+  margin-top: 20px;
 }
 
 .time-block {
