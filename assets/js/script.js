@@ -34,10 +34,16 @@ function colourCodeTimeBlock() {
 }
 
 // Allow a user to enter an event when they click a timeblock
-
 // Save the event in local storage when the save button is clicked in that timeblock.
 $(".saveBtn").on("click", function (event) {
+  // grab the input from description field for local storage
   var input = $(this).siblings(".description").val();
-  localStorage.setItem("User input", input);
+
+  // grab the time related to description field for local storage
+  var hour = $(this).parent().attr("id");
+
+  // set both to local storage
+  localStorage.setItem(hour, input);
 });
+
 // Persist events between refreshes of a page
