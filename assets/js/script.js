@@ -11,17 +11,19 @@ currentDayEl.append(`${dayOfWeek}, ${dayOfMonth}th ${month}`).css("color", "#06a
 function colourCodeTimeBlock() {
   // get current hour
   var currentHour = dayjs().format("H");
+  console.log(currentHour);
 
   // loop through blocks
   $(".time-block").each(function (index, element) {
     var hourBlock = parseInt($(element).attr("id").split("hr")[1]);
+    console.log(hourBlock);
 
     // switch classes based on past, present and future
     if (hourBlock < currentHour) {
       $(element).removeClass("present");
       $(element).removeClass("future");
       $(element).addClass("past");
-    } else if (hourBlock === currentHour) {
+    } else if (hourBlock == currentHour) {
       $(element).removeClass("past");
       $(element).removeClass("future");
       $(element).addClass("present");
@@ -46,4 +48,19 @@ $(".saveBtn").on("click", function (event) {
   localStorage.setItem(hour, input);
 });
 
-// Persist events between refreshes of a page
+// Persist events between refreshes of a page for each block
+function persistEvents() {
+  $("#hr9").children(".description").val(localStorage.getItem("hr9"));
+  $("#hr10").children(".description").val(localStorage.getItem("hr10"));
+  $("#hr11").children(".description").val(localStorage.getItem("hr11"));
+  $("#hr12").children(".description").val(localStorage.getItem("hr12"));
+  $("#hr13").children(".description").val(localStorage.getItem("hr13"));
+  $("#hr14").children(".description").val(localStorage.getItem("hr14"));
+  $("#hr15").children(".description").val(localStorage.getItem("hr15"));
+  $("#hr16").children(".description").val(localStorage.getItem("hr16"));
+  $("#hr17").children(".description").val(localStorage.getItem("hr17"));
+}
+
+// call functions
+persistEvents();
+colourCodeTimeBlock();
