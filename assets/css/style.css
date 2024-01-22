@@ -1,3 +1,11 @@
+:root {
+  --red: rgb(255, 155, 155);
+  --grey: rgb(229, 225, 218);
+  --yellow: rgba(255, 254, 196, 0.566);
+  --green: rgb(203, 255, 169);
+  --turq: rgb(99, 136, 137);
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -9,16 +17,16 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  border-left: 1px solid var(--turq);
   padding: 10px;
 }
 
 header {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: var(--yellow);
+  color: var(--turq);
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid var(--turq);
   padding: 60px;
 }
 
@@ -38,28 +46,27 @@ header {
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--turq);
 }
 
 .hour {
-  background-color: #ffffff;
+  background-color: white;
   color: #000000;
-  border-top: 1px dashed #000000;
   padding-top: 30px;
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: var(--grey);
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: var(--red);
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: var(--green);
   color: white;
 }
 
@@ -67,11 +74,12 @@ header {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: var(--turq);
   color: white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
+  font-size: 25px;
   transition: all 0.3s ease-in-out;
+  color: var(--green);
 }

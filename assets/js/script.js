@@ -1,22 +1,23 @@
+// trying to add advanced formats for date ordinal
+// dayjs.extend(window.dayjs_plugin_advancedFormat);
+
+// display current date
 const currentDayEl = $("#currentDay");
-
-// Display current day
-var dayOfWeek = dayjs().format("dddd");
-var month = dayjs().format("MMMM");
-var dayOfMonth = dayjs().format("DD");
-
-currentDayEl.append(`${dayOfWeek}, ${dayOfMonth}th ${month}`).css("color", "#06aed5");
+// 'DO' NOT WORKING
+currentDayEl.append(dayjs().format("dddd, D MMMM")).css({
+  color: "rgb(99, 136, 137)",
+  paddingTop: "30px",
+  fontSize: "28px",
+});
 
 // Color-code each timeblock based on past, present, and future
 function colourCodeTimeBlock() {
   // get current hour
   var currentHour = dayjs().format("H");
-  console.log(currentHour);
 
   // loop through blocks
   $(".time-block").each(function (index, element) {
     var hourBlock = parseInt($(element).attr("id").split("hr")[1]);
-    console.log(hourBlock);
 
     // switch classes based on past, present and future
     if (hourBlock < currentHour) {
